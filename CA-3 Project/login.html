@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Lit-Loom</title>
+    <link rel="stylesheet" href="/responsive-book-website-main/assets/css/styles.css">
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
+    <style>
+        .login{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: var(--z-fixed);
+  background-color: hsla(230, 12%, 96%, -6);
+  backdrop-filter: blur(16px);
+  align-items: center;
+  padding: 1.5rem;
+  text-align: center;
+  transition: top .4s;
+}
+.login-form{
+  background-color: var(--container-color);
+  padding: 2rem 1.5rem;
+  border: 2px solid var(--border-color);
+  row-gap: 1.25rem;
+}
+.login-title{
+  font-size: var(--h2-font-size);
+}
+.login-group{
+  row-gap: 1.25rem;
+}
+.login-label{
+  display: block;
+  text-align: initial;
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+  margin-bottom: .25rem;
+}
+.login-input{
+  width: 100%;
+  background-color: var(--container-color);
+  border: 2px solid var(--border-color);
+  padding: 1rem;
+  color: var(--text-color);
+}
+.login-signup,
+.login-forgot{
+  display: block;
+  font-size: var(--small-font-size);
+}
+.login-signup{
+  margin-bottom: .5rem;
+}
+.login-signup a{
+  color: var(--first-color);
+  font-weight: var(--font-medium);
+}
+.login-forgot{
+  color: var(--first-color);
+  margin-bottom: 1.25rem;
+}
+.login-button{
+  width: 100%;
+  cursor: pointer;
+}
+    </style>
+</head>
+<body>
+     <!--==================== LOGIN ====================-->
+     <div class="login grid" id="login-content">
+        <form onsubmit="return login()" action="/responsive-book-website-main/index.html" class="login-form grid">
+           <h3 class="login-title">Sign Up</h3>
+           <div class="login-group grid">
+              <div>
+                 <label for="" class="login-label">Email </label>
+                 <input type="email" placeholder="Write your email" id="login-email" class="login-input">
+              </div>
+              <div>
+                 <label for="" class="login-label">Password</label>
+                 <input type="password" placeholder="Enter your password" id="login-pass" class="login-input">
+              </div>
+              <div>
+                <label for="" class="login-label">Confirm Password</label>
+                <input type="password" placeholder="Confirm your password" id="login-conpass" class="login-input">
+             </div>
+           </div>
+
+           <div>
+              <span class="login-signup">
+                 You do not have an account? <a href="#">Log In</a>
+              </span>
+
+              <a href="#" class="login-forgot">
+                 You forgot your password
+              </a>
+              <button type="submit" class="login-button button">Log In</button>
+           </div>
+        </form>
+     </div>
+      <script src="/responsive-book-website-main/assets/js/main.js"></script>
+      <script>
+        function login(){
+            var a = document.getElementById('login-email').value;
+            var b = document.getElementById('login-pass').value;
+            var c = document.getElementById('login-conpass').value;
+            if (a=="" || b=="" || c==""){
+                alert("All fields are mandatory")
+                return false;
+            }
+            else if (b!=c){
+              alert("Enter correct Password")
+              return false;
+            }
+            else{
+                true;
+            }
+        }
+    </script>
+</body>
+</html>
